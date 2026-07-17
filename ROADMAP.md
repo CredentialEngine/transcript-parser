@@ -14,12 +14,16 @@ write-up), and a phased plan to close it.
 | Confidence scoring / communicating certainty | ✅ high/medium/low/none bands + runner-up candidates in report |
 | Traceability | ✅ Every match links to the registry resource URI/CTID |
 | Uses existing Registry course-catalog data | ✅ Search API (subClassOf LOP, dual owned/offered queries) |
+| Return skills/competencies for matched courses | ✅ **Milestone (2026-07-17):** full run produced a transcript-level skills profile from a real transcript whose matched courses carry `ceterms:teaches` competencies — the transcripts → skills promise demonstrated end-to-end |
 
 ## Gaps between current design and the vision
 
-1. **Skills are the point — and we don't return them yet.** The write-up's
-   core promise is transcripts → *skills profiles*. We stop at the course
-   CTID; we never fetch `ceterms:teaches` → competency data.
+1. ~~**Skills are the point — and we don't return them yet.**~~ **DONE
+   (2026-07-17).** Matched courses now return their `ceterms:teaches` /
+   `ceterms:assesses` competencies (inline alignments plus resolution of
+   URI-only references), aggregated into a deduplicated per-transcript
+   skills profile with source-course traceability — verified on a live run
+   against a transcript with Registry competency coverage.
 2. **PII posture is inverted.** Current design deliberately strips learner
    PII. The vision requires learner identity + transcript-only data
    (semester GPA, cumulative GPA, milestones) in a normative structure for
@@ -46,11 +50,11 @@ write-up), and a phased plan to close it.
 
 *The minimum needed for the write-up's headline story to be true.*
 
-- **Skills retrieval:** for each matched course/credential, fetch linked
-  competencies (`ceterms:teaches` → CTDL-ASN frameworks) via the Search API's
-  Description Sets / RelatedItems, or per-resource graph fetch. Add a
-  `skills` section per matched course and an aggregated **skills profile**
-  per transcript (deduped competencies with source-course traceability).
+- ✅ **Skills retrieval (done, live-verified 2026-07-17):** matched
+  courses/credentials return linked competencies (inline `ceterms:teaches`
+  alignments + public-fetch resolution of URI-only references); per-course
+  `skills` lists and an aggregated per-transcript **skills profile** with
+  source-course traceability, in report.html, results.json, and skills.csv.
 - **Extraction schema additions:** per-term GPA and credit totals,
   cumulative GPA, academic standing, honors/dean's list/milestones,
   enrollment status, catalog year if printed.
