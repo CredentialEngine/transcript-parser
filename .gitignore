@@ -1,0 +1,16 @@
+# Run outputs: contain parsed transcript data and cached registry responses
+output*/
+*.html
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Never commit transcripts or credentials
+*.pdf
+*.docx
+.env
+
+# Internal meeting artifacts
+MEETING-NOTES-*.md

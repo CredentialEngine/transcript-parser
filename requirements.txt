@@ -1,0 +1,4 @@
+anthropic>=0.116.0
+pydantic>=2.0
+requests>=2.31
+python-docx>=1.1
