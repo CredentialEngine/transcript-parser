@@ -37,6 +37,11 @@ Given a folder of transcripts (PDF, including scanned documents), the parser:
    including which institutions have no published Registry data, a useful
    view of Registry coverage.
 
+See [docs/architecture.md](docs/architecture.md) for a sequence diagram of the
+pipeline (including exactly where the LLM is called) and
+[docs/confidence.md](docs/confidence.md) for how confidence ratings are
+determined.
+
 ## Quick start
 
 ```powershell
