@@ -1,4 +1,15 @@
-# Transcript Parser: Translating Academic Records into Skills and Opportunities
+# Transcript Parser: Translating Academic Records into Skills and Opportunities (Prototype)
+
+> [!WARNING]
+> **Prototype for demonstration only. Not for production use.**
+>
+> This project is intended solely as a demonstration of the art of the possible. It is a prototype for exploring potential approaches and capabilities, not a production-ready application. The code has not been formally reviewed, tested, or vetted by Credential Engine for accuracy, security, reliability, or suitability for implementation.
+>
+> In particular:
+> - Course and degree extraction is done by an **AI model and can be inaccurate**. Have a person check results against the source transcript.
+> - Match confidence ratings are **expert-tuned and checked against a 39-transcript sample, not statistically calibrated**.
+> - There is **no automated test suite**.
+> - Transcript files are **sent to the Anthropic API** for extraction. Confirm data-handling policy before processing non-redacted, FERPA-protected documents.
 
 An AI-powered transcript parser that reads college transcripts, extracts the
 institutions, courses, credits, grades, and degrees they contain, and maps
